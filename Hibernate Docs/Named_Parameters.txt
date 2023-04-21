@@ -1,0 +1,18 @@
+Named Parameters:
+
+Query q = session.createQuery("update student set name=:n where id=:i");
+q.setParameter("n", "raju");
+q.setParameter("i", "111");
+
+n & i is the named parameters
+
+
+
+Positional Parameters or Place holders:
+
+Query q = session.createQuery("update student set name=?1 where id=?2");
+q.setParameter(1, "raju");
+q.setParameter(2, "111");
+
+HCQL is used when we want to fetch very big size data from database 
+without passing an query we fetch data from database using interface

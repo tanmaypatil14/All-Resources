@@ -1,0 +1,59 @@
+
+Types of Inheritance mapping
+1. SINGLE_TABLE:- 
+            Only one table is created for all class.
+        Limitations:-
+            In this case both the entities stored in the single table
+            Here one entity is not releted to other entity it will simply return null values
+            If we stored multiple enities in single table while retreiving the data from the table,
+            the retrieving speed will be very slow. For this resons we dont use SINGLE_TABLE strategy.
+
+Syntax:
+@Entity
+@Table(name="emp_store")
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)			//This annotation must be written only on parent class
+@DiscriminatorColumn(name="emp_type",discriminatorType=DiscriminatorType.STRING)   //additional column to differ parent and child
+@DiscriminatorValue("EMP")		//parent rows will have this value in Discriminator Column
+                  
+2. Table_Per_Subclass:- 
+            Seperate table is created for each class
+            In this case tables are create seperately but their is no relation between both tables.
+            Due to this kind of reason we also not prefer this Table_Per_Subclass strategy.
+            So we need give relationship between both the tables. 
+Syntax:
+@Entity
+@Table(name = "emp1")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+
+3. JOINED:-
+            In this seperate tables are created for parent and subclass
+            But in this strategy, the data belong to parent entity are stored into parent table
+            and the data belong to subclass entity are stored into child table 
+            But main thing is that, their is an relation between BOTH THE TABLE and adding referance of primary and foreign key
+            added automatically.
+Syntax:
+@Entity
+@Table(name = "emp2")
+@Inheritance(strategy = InheritanceType.JOINED)
+
+Note:- Most preferable strategy is JOINED strategy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

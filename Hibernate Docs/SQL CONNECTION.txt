@@ -1,0 +1,12 @@
+
+
+Connection tables:-
+
+properties.put(Environment.DRIVER, "com.microsoft.sqlserver.jdbc.SQLServerDriver");
+properties.put(Environment.URL, "jdbc:sqlserver://localhost;databaseName=SMS;instanceName=SQLEXPRESS2019");
+properties.put(Environment.USER, "sa");
+properties.put(Environment.PASS, "password_123");
+properties.put(Environment.DIALECT, "org.hibernate.dialect.SQLServerDialect");
+properties.put(Environment.SHOW_SQL, "true");
+properties.put(Environment.FORMAT_SQL, "true");
+properties.put(Environment.HBM2DDL_AUTO, "update");
