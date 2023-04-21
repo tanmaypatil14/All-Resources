@@ -1,0 +1,48 @@
+@Service :
+  It is used to mark the class as a service provider
+  @Service annotation is used with classes that provide some business functionalities
+   
+  @Service(value = "customerService")
+    Value is used to provide the referance name that should match with variable name
+    autowired in the presentation layer(API Layer).
+____________________________________________________________________________________
+
+@Transactional :
+  As we are communicating with the database. So any type of CRUD operation we are doing.
+
+  If transaction is success it is fine.
+  Or If it is not success :- There is some data we are sending over a network from
+                             API -> SERVICE -> DAO -> DATABASE it is not success.
+                             Now your entire transaction and related data it should be 
+                             nullified or it should be removed. For that purpose we need to
+                             maintain @Transactional propwerties.
+
+ Whenever we perform CRUD operation it is managable. If trabsaction is success it will commit automatically,
+ If it is not success it will rollback automatically and there are certain properties like one transaction 
+ is one transaction is dependent one the another transaction. 
+ So the same transaction object should be communicated with the next transaction as well 
+ that is called propogation properties, isolation properties, timeout properties(means how much time this process can be processed, 
+ do you want to wait for long time or some milliseconds i have to rollback 
+ my operation [@Transactional(rollBack = 3000) OR @Transactional(timeout = 3000)]). 
+ Otherwise it will take defualt value but we have to give @Transactional.
+
+QUE: In this transaction what all the properties it will take care is?
+ANS: Isolation, Propogation, rollBack, timeout properties
+
+QUE: Why we give @Transactional in the service layer?
+ANS: When we write @Transactional annotation it will come under declarative transaction that is application level means within the application
+     It will control transaction. Whereas you have the transaction db level means within the db operation again the transaction control.
+
+Declarative way of transactional is the simplest way as compared to programatic way which we use in hibernate like beginTransaction.
+
+
+
+
+
+
+
+
+
+
+
+                             

@@ -1,0 +1,56 @@
+To Handle the exception globally we use exception handle class. Must annotated with@RestControllerAdvice
+
+But in simple application we have one single service but we may 
+
+Whatever exception we throw in controller/API layer, to show that exception in proper way. For this purpose we go for Global exception handler.
+Instead of giving the big stack trace of message, it simply formulated our error message.
+For to customize the error message we go for global exception handling.
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+   
+   @ExceptionHandler(EmployeeNotFoundException.class)
+   public ResponseEntity<ResponseError> handleEmployeeNotFoundException(EmployeeNotFoundException ex) {
+   
+     ResponseError error = new ResponseError(ex.getMessage(), 404, LocalDateTime.now());
+     return new responseEntity<ResponseError>(error, HttpStatus.NOT_FOUND);
+ }
+}
+
+@ExceptionHandler(MethodArgumentTypeMistmatchException.class)
+public ResponseEntity<responseError> handleMethodArgumentTypeMistmatchException (MethodArgumentTypeMismatchException ex) {
+
+    System.out.println("Name of Parameter => " + ex.getname());
+    System.out.println("Error Message => " + ex.getMessage());
+    System.out.println("Expected type of argument => " + ex.getRequiredType().getSimplename());
+    System.out.println("Actual argument => " + ex.getValue());
+}
+
+
+@ExceptionHandler(MethodArgumentTypeMistmatchException.class)
+public ResponseEntity<responseError> handleMethodArgumentTypeMistmatchException (MethodArgumentTypeMismatchException ex) {
+      
+     String name = ex.getName();
+     String expectedType = ex.getRequiredType().getSimpleName();
+     String value = (String) ex.get.Value();
+     String message = String.format("%s should be valid %s and %s is not valid", name, expectedType, value);
+
+     ResponseError error = new ResponseError(message, 400, LocalDateTime.now());
+  return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

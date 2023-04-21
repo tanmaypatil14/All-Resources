@@ -1,0 +1,30 @@
+What is REST Template?
+ANS: 
+     How do we use third party REST API in consumer application
+     Means i wanted to use this consumer application in the client application, so that is called as REST Template.
+     Rest Template is used to create applications that consume RESTful Web Services.
+
+
+Client should be anything for example, Angular, REACT JS or it may be .NET application, the consumer can be anything it also 
+anroid or OS application
+
+It is nothing but to connect REST FULL webservices with ANY APPLICATION . TO talk a web service with another webservices for that
+ purpose we use REST Template.
+
+Example:
+
+customer servicr => signup, login, change_password, edit_profile
+cart service => add, remove, update product
+order service => 
+inventory service => 
+product service =>
+payment service =>
+
+
+To call the end points we use REST Template;
+   api/v/{order_ID}/{customer_Id}
+
+
+RestTemplate is a class present in org.springframework.web.client.RestTemplate package. It is also GET, PUT, POST and Delete methods. So
+it is webclient.
+

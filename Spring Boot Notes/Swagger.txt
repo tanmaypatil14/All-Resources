@@ -1,0 +1,80 @@
+Implememntation of swagger in spring boot?
+
+  Swagger is one of the most used documentation tool for the software engineering, when you have the APIs
+exposed to the outer world and you need to maintain documents of input and output contract or need to see the
+sample input and expected sample output of the api, swagger is worth use.
+
+What is Swagger?
+  
+  Swagger is an open source software framework backed by a large ecosystem of tools that helps developers
+design, build, document and consume RESTful Web services.
+
+By using swagger we can able to do API Design, API Developement, API Documentation, API Testing, API Mocking and
+Virtualization, API Governance, API Monitoring and OpenAPI & Swagger.
+
+Why we need to document API?
+
+If we have spring boot application and we number of URLS. Client is consuming those URLs
+
+Youtube link: https://www.youtube.com/watch?v=A-lqrhhMEYY
+
+There are multiple ways to document our RESTful API
+  -WADL
+  -RESTDocs
+  -Swagger or OpenDocs
+
+-The current version defines a set of HTML, JavaScript and CSS assets to dinamically generate 
+ documentation from a Swagger-compliant API.
+-These files are bundled by the swagger UI project to display the API on the browser.
+-Besides rendering documentation, Swagger UI allows other API developers or consumers to interact with the API's 
+ resources without having any of the implementation logic in place.
+-The Swagger 2 specification, which is known as OpenAPI specifications, has serveral implementations.
+-Currently, Springfox is popular for Spring Boot application.
+
+--We would need to add couple of dependencies related to swagger and configure a Docket to generate Swagger Documentation
+  We will also use Swagger UI to have a visual representation of the Documentation and execute test Requests.
+--Docket :- It is a bean which is predefined bean provided by the swagger to configure or to customize a couple of properties
+ 
+ Dependecy need to add:
+
+<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.9.2</version>
+</dependency>
+
+springfox-swagger2 :-- It is responsible to generating our documentation
+
+<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.9.2</version>
+</dependency>
+
+springfox-swagger-ui :-- It is responsible to generating UI
+
+URL:- /v2/api-docs
+      /swagger-ui.html
+
+Univerct:- https://univerct.citiustech.com/mod/hvp/view.php?id=9376
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

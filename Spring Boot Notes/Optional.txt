@@ -1,0 +1,14 @@
+Why we use optional class?
+
+Simply it returns true if the value is presnt or returns false if the no value is present.
+
+
+
+A container object which may or may not contain a non-null value.If a value is present, isPresent() returns true. 
+If no value is present, the object is considered empty and isPresent() returns false. 
+
+Additional methods that depend on the presence or absence of a containedvalue are provided, such as orElse()(returns a default value 
+if no value is present) and ifPresent() (performs anaction if a value is present). 
+
+This is a value-basedclass; programmers should treat instances that are equal as interchangeable and should not use 
+instances for synchronization, or unpredictable behavior mayoccur. For example, in a future release, synchronization may fail.

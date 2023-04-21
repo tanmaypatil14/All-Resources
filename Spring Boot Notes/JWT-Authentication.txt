@@ -1,0 +1,67 @@
+JWT Authentication:-
+        JWT is an open source that defines a compact and self-contained way of trasmitting information between parties as a JSON object
+
+  -JWT-> (JSON Web Token) used to authenticate users
+  -JWT gains popularity because of token not use cookies and no session
+  -When request first time comes to server, then server validates the token and if validation request fails then request is rejected
+
+As a developer we are working on client and server side architecture. So JWT plays an important role authenticate client to access
+the server side api. until and unless client gives exactly matching token, client will not access the web service
+ 
+  -Steps of checking token:-
+    1.Check the JWT is well formed or not
+    2.Check Signature
+    3.Validate Standard time
+    4.Check the Client permission
+  -JWT consists of three parts separated by dot
+    1.Header
+    2.Payload
+    3.Signature
+
+1.Header
+   It is consists of two parts: type of the token which is the JWT and Signing algorithm.
+      Ex. { "alg": "HS256", "typ": "JWT" }
+
+2.Payload
+  The second part of token is payload, which contains a claims. Claims are statements about an entity and additional.
+  Three types of claims: registered, public and private claims.
+  It means data such as, { "sub": "1234567890", "name": "John Doe", "admin": true }
+
+3.Signature
+  To create a signature we need to take the encoded header, encoded payload and secret.
+  This signature is used to verify message wasn't change along the way.
+-----------------------------------------------------------------------------------------------------------------------------
+How do JSON Web token works?
+  When the user successfully logs in using their credentials, a JSON web token will be returned.
+  We should not keep tokens longer than required and we can't store sensetive session data on browser storage due to lack of security.
+  
+  Whenever user wants to access a protected data. User should send the JWT, typically in the Authorization header using the Bearer schema.
+  The content of the header looks like -> Authorization : Bearer <token>
+
+  Flow to access a API resource:-
+    1. The client requests authorization to the Authorization Server.
+    2. When the authorization is granted, the authorization server returns a access token to the application or client.
+    3. The application or client uses that access token to access a protected resource or API.
+-----------------------------------------------------------------------------------------------------------------------------
+Why should we use JWT ?
+  Benefits of JWT when compared to Simple Web Token(SWT) and Security Assertion Markup Language Tokens(SAML).
+
+-----------------------------------------------------------------------------------------------------------------------------
+Steps to create JWT Authentication
+
+ 1. Add dependency:-
+    spring-boot-starter-security
+ 2. Create a class of any name like SecurityConfig which extends WebSecurityConfiguration from which we can override the methods and add
+    EnableWebSecurity & Configuration annotation on top of the class.
+
+-----------------------------------------------------------------------------------------------------------------------------
+Working Jwt Authentication.
+
+  1. From Client to Server :- Post request /generate-token with username and password to server
+  2. Server side           :- It will validate the username and password. And generate the JWT token using secret key.
+  3. From Server to Client :- It will return generated token.
+  4. From Client to Server :- If client wants to send any request to the server first client needs to validate generated token.    
+                              Then and then all client side requests are granted.
+  5. Server Side           :- That token received from client it will validated using secret key.
+  6. From Server to Client :- And then response will send to client.
+

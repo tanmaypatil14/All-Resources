@@ -1,0 +1,11 @@
+What is Profiles
+ ->Spring boot profiles are a eay to group and activate parts of application configuration for different environments, 
+   such as development, testing and production
+
+  ->Steps to apply profiles
+    -create the separate application.properties for each environments, such as development, testing and production
+           - developement -> application-dev.properties
+           - production -> application-prod.properties
+           - testing -> application-test.properties
+    -Each file having its own configuration.
+    -Write a command line in application.properties file as above --spring.profiles.active=dev 

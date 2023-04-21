@@ -1,0 +1,7 @@
+Why we dont go with SOAP?
+ANS:
+     1. In SOAP based web services we need xml based conversion.
+     2. We need a registry to be maintained
+     3. we need a SOAP request and SOAP response
+     4. Everything goes in xml format, so this will be very very slow to process
+  SO, this is the reasone we dont prefer to use with the SOAP based web services.

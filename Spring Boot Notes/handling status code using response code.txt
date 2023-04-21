@@ -1,0 +1,11 @@
+ResponseEntity:
+With the help of this we can add http status codes
+Whenever we sending response code we can add http status codes
+
+RequestBody:
+This annotation is used add the, but it should be along with a status code
+
+
+HTTP STATUS CODE LINKS:
+
+https://restapitutorial.com/httpstatuscodes.html

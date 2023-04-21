@@ -1,0 +1,39 @@
+@SpringBootApplication:
+  -Main Class is always annotated with this annotation
+  -It is combination of three annotation --> @Configuration + @EnableAutoConfiguration + @ComponentScan
+
+  -> @Configuration:-It will behave class as bean
+                     We can declare @Configuration annotation on any class. Which means in that class some methods are present those methods
+                     returns spring bean. And that returned bean object will managed by the IOC container.So it will inject that object
+                     whenever required at particular class.
+     @EnableAutoConfiguration:- It enables the auto-configuration of SpringApplicationContext by scanning class path component and 
+                                registering beans.
+     @ComponentScan:- It will scan all the sub packages which is come under the base package or beans to be registered in IOC container.
+                      
+-------------------------------------------------------------------------------------------------------------------------------------------
+@Bean:- It is an method level annotation which declares that the method is returning a spring bean which is managed by spring container.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+@Autowired:- spring container will find object type in class path which matches the object on which @Autowired annoation is applied.
+             If that object is matches then it will inject that object.
+             Enables you to inject the object dependency implicitly.
+             It internally uses setter or constructor injection. Autowiring can't be used to inject primitive and string values. 
+             It works with reference only.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+@Component:- It is class level annotation. If apply this annotation on class @Component annotation will get to know that spring is going
+             to manage the life cycle of that class. So we can autowire that class. first object is created and then it will inject.
+             i)@Controller- It will act like a component as well as it will provide facility related to mapping for MVC controller 
+            ii)@Service
+           iii)@Repository- It will apply on DAO layer and it will provide dao facilities. If any exception is occur in dao layer
+                            it will re-throw that exception as a spring unchecked exception we don't need to manage it.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+@ReponseBody:-This annotation tells controller that object return will automatically seriallized into Jason and passed back into http response.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+@RequestBody:- Suppose we are getting data from forms that time we use @RequestBody
+               It will Automatically deserialize into object.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+@RestController:- Combination of @Controller and @ResponseBody

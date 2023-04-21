@@ -1,0 +1,36 @@
+@Entity
+It is associated with table
+When data  is comming from table is stored into this entity,
+but this entity we can not giving to the presentation layer to the customer to diplay in the form of JSON.
+Because anybody is going to do the changes in the api layer it will reflected into the table. 
+So entity should be maitain in the persistence layer.
+So what we have to  maintain to display presentation layer ---That is called as DTO
+
+What is DTO?
+Ans:- 
+  It is nothing but data transfer object.
+  It is also looks like entity only
+  
+        Example:- CustomerEntity- This is associated with the table which represents back end table information.
+                  CustomerDTO- Whereas DTO represents the data comming from front end it is just
+                               the data represnts the presentation layer and also it is used to transfer 
+                               data from all layers
+
+             
+              API(Cuctomer)--->---Service--->---DAO
+
+         It take data from customer(DTO) AND to the service and send to the DAO
+         Now in DAO we take data from DTO map it the entity which associated with the table.
+
+Entities are stored in persistance layer and DTO's are stored in all layers means presentation tears,
+Service layer and also persistance layer. In persistance layer we take an DTO
+And map it into entity which assiciated with a table.
+
+And while receiving a data from database first we get the data into entity and entity is stored into DTO.
+While we are receiving a data from front end first we get the data into DTO and then DTO to entity we will map
+So both ways we have to map from DTO to ENTITY and ENTITY to DTO.
+
+@RequestBody - This anotation is used to read the data comming from customer.
+
+    
+
