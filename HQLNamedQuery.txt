@@ -1,0 +1,47 @@
+Advantages of Hibernate Named Query:
+
+      Whenever we want to do the necessary changes in client application 
+      HQL Query we can simply change it using model class
+
+
+Step 1: Model Class
+
+package com.hql.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Student")
+@NamedQueries(
+		{
+			@NamedQuery(
+					name = "fingbyStudentName",
+					query = "from Student s where s.studentName = :name"
+					)
+		}
+		)
+public class Student {
+	
+	@Id
+	@Column(name = "Student_ID")
+	private int studentId;
+	@Column(name = "Student_NAME")
+	private String studentName;
+	@Column(name = "Student_EMAIL")
+	private String studentEmail;
+
+
+
+Step 2 : Main method
+
+		Query namedQuery = session.getNamedQuery("fingbyStudentName");
+		namedQuery.setParameter("name", "Vaidehi");
+		List<Student> list = namedQuery.list();
+		for(Student s: list) {
+			System.out.println(s);
+		}

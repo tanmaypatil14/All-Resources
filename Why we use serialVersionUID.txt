@@ -1,0 +1,16 @@
+Why we use serialVersionUID ?
+ANS. =
+           Suppose first we serialize the program it will gernerate txt file 
+           AND then we deserialize the program it will read the txt file which 
+           created earlier using same program.
+
+           For to read and write the txt file SerialVersionUID plays major role.
+
+           After serializing the program txt file is generated. And then we have
+           done some updation is model class / POJO class. instead of again serializing
+           we are directly deserialize the program and read the data from file,
+           compiler sees that older and new UID are different then it will throw an
+           exception.
+
+           If we use UID instead of using default UID, whether we update the model class after
+           serializaing it will able to read the txt file and it will not throw an exception.

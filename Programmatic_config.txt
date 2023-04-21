@@ -1,0 +1,18 @@
+
+
+
+Connection tables:-
+
+properties.put(Environment.DRIVER, "com.microsoft.sqlserver.jdbc.SQLServerDriver");
+properties.put(Environment.URL, "jdbc:sqlserver://localhost;databaseName=SMS;instanceName=SQLEXPRESS2019");
+properties.put(Environment.USER, "sa");
+properties.put(Environment.PASS, "password_123");
+properties.put(Environment.DIALECT, "org.hibernate.dialect.SQLServerDialect");
+properties.put(Environment.SHOW_SQL, "true");
+properties.put(Environment.FORMAT_SQL, "true");
+properties.put(Environment.HBM2DDL_AUTO, "update");
+
+
+
+https://www.bing.com/search?q=ms+sql+configuration+in+application.properties+file&cvid=1cefa032a89140cf97803dc45d2e924a&aqs=edge..69i57j69i11004.26401j0j1&pglt=43&FORM=ANNAB1&PC=U531&ntref=1
+https://springframework.guru/configuring-spring-boot-for-microsoft-sql-server/#:~:text=SQL%20Server%20Configuration.%201%20From%20the%20Start%20menu%2C,Ports%20and%20specify%201433%20for%20TCP%20Port.%20

@@ -1,0 +1,38 @@
+https://drive.google.com/drive/folders/19v9JQSGOrAPFvROLaSpvfrDd8pJaz1g4?usp=sharing
+
+https://synergeticsindia-my.sharepoint.com/:f:/g/personal/sunitaalim_synergetics-india_com/Ellko2A_7DpNrBaJayMXi2MB5JveGP-hefXogety17KGSg?e=snz9ua
+
+TypeScript
+
+https://univerct.citiustech.com/course/
+
+
+https://univerct.citiustech.com/mod/hvp/view.php?id=9059
+
+https://www.typescriptlang.org/docs/ 
+
+Angular
+
+https://univerct.citiustech.com/mod/hvp/view.php?id=9221
+https://univerct.citiustech.com/mod/hvp/view.php?id=9224
+https://univerct.citiustech.com/mod/hvp/view.php?id=9223
+https://univerct.citiustech.com/mod/hvp/view.php?id=9224
+
+custom pipes and routing
+
+
+GIT LINKS on University
+https://univerct.citiustech.com/mod/hvp/view.php?id=7417
+
+GIT-HUB LINKS on University
+https://univerct.citiustech.com/mod/hvp/view.php?id=9191
+
+Youtube Link
+https://www.youtube.com/results?search_query=inheritance+mapping+in+hibernate
+____________________________________________________________________________________
+
+Links to learn
+
+Hibernate criteria builder
+https://www.baeldung.com/hibernate-criteria-queries
+https://www.tutorialspoint.com/hibernate/hibernate_criteria_queries.htm
