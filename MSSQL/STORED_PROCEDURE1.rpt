@@ -1,0 +1,16 @@
+﻿EmpID       EmpName              Gender
+----------- -------------------- ------
+1           Tanmay Patil         M
+2           Jyoti patil          F
+
+(2 rows affected)
+
+EmpID       BasicSalary           HRA                   DA
+----------- --------------------- --------------------- ---------------------
+1           99999.99              999.90                99.90
+2           79999.99              799.90                79.90
+
+(2 rows affected)
+
+
+Completion time: 2023-01-05T01:39:36.4412055+05:30
