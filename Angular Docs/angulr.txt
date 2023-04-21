@@ -1,0 +1,10 @@
+Version :-
+    In the package.json file, we have two symbols charat "^" and Tilt "~"
+       ^15.2.0 It will always goes for recent version but it will check minor and patch.
+       ~7.8.0 It will also goes for recent verision but it will check for patch
+Versioning system works as bellow:-
+       
+  15-major.2-minor.0-patch
+
+Browser Module:-
+This should be loaded at the time of rendering of the page
