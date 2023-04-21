@@ -1,0 +1,130 @@
+What is Spring Cloud?
+Spring Cloud is a set of libraries to create applications that run On-Premises or Cloud-like Cloud Foundry, AWS, etc.
+
+What are the important projects under Spring Cloud?
+Under this project, a large number of projects have been open sourced for public use. 
+Eureka, Hystrix, and Zuul are the more popular ones among them.
+
+Netflix OSS vs Spring Cloud: What are the differences?
+
+Spring Cloud is an umbrella project, which consists of several technologies to help developing cloud based applications. 
+Spring Cloud Netflix is a subproject which provides an integration for the Netflix OSS projects
+
+What is Netflix OSS? 
+A set of frameworks and libraries to solve distributed-systems problems at scale. 
+It provides tools and services to get the most out of your (big) data. 
+It also provides runtime containers, libraries and services that power microservices.
+
+What is Spring Cloud? 
+Spring helps development teams everywhere build simple, portable, fast and flexible JVM-based systems and applications. 
+
+what is hystrix in microservices?
+Like Eureka, Hystrix is also an open source library provided by Netflix in the Microservices space. 
+Hystrix implements the Circuit Breaker pattern. You don’t have to write the network or thread programming 
+to handle fault tolerance in the Microservices. 
+You need to use Hystrix library just by giving parameters and that’s it.
+"http://localhost/hystrix.stream"
+
+What is a spring Cloud gateway?
+Spring Cloud Gateway provides a library for building API gateways on top of Spring and Java. 
+It provides a flexible way of routing requests based on a number of criteria, 
+as well as focuses on cross-cutting concerns such as security, resiliency, and monitoring.
+
+Features
+Spring Cloud Gateway features:
+-Built on Spring Framework 5, Project Reactor and Spring Boot 2.0
+-Able to match routes on any request attribute.
+-Predicates and filters are specific to routes.
+-Circuit Breaker integration.
+-Spring Cloud DiscoveryClient integration
+-Easy to write Predicates and Filters
+-Request Rate Limiting
+-Path Rewriting
+
+What is config server?
+It provides us stack to load common data for particular microservices.
+it is also a spring boot project.
+Which commonly loads certain properties file. For Ex Suppose we have 8 services from which 5 services having same proprties file configuration
+so that time we use config server for those services. Purpose is to only load the properties file & supply to those microservices.
+we need to add dependency spring.cloud.config.server. Serparate config project will create to just load an common data and add 
+@EnableConfigServer annotation on top of the main method class with @SpringBootApplication annotation. It load the central data from git
+repository.
+One more thing if we configuring application.properties file of customerService. Their must be spring application name and properties file
+name(on git repository) should be match.
+
+what is spring cloud ribbon?
+Ribbon is a client-side load balancer that gives you a lot of control over the behavior of HTTP and TCP clients
+One client is calling one service at a time that time spring cloud ribbon not needed. But Multiple client calling a microservice multiple 
+times then that time rest template will not work instead of that we need to use spring cloud ribbon.
+We have to add dependency spring.cloud.starter.netflix.ribbon. For multiple request restTemplate will not work.
+
+How many types of design patterns?
+Aggregator; API Gateway; Chain of responssibility; Circuit Breaker; Decomposition; Event Sourcing; database or shared data.
+
+What is Eureka server?
+Eureka Server is an application that holds the information about all client-service applications. Suppose we have 5 microservices 
+and we register them in eureka server. it will monitor on those microservices and gives info which service is in use and it health and
+which service is down.
+Every Micro-service will register into the Eureka server and Eureka server knows all the client applications running on which port 
+and IP address. We need to develop the Eureka server and run it on the default port 8761.
+
+What is Service Discovery Pattern?
+Service Discovery is How the applications and microservices locate each other on a network.
+If we have 4 (micro)services and all services having its own port number, instance name, and local host this is all our physical properties of
+our (micro)services. If these microservices properties are modified on server. I deployed 1 service on different port and 2nd service is not
+running then So, I am switching to another port. In that case How the Consumer application or one of these service whichever is calling the
+other service to be notified. There is changes in your microservice it should be done automatically. That is the reason we have pattern
+called as SERVICE DISCOVERY PATTERN. and service registry. That means whatever the services we have all are registered here with service name,
+service port number and its host name.
+For server dependency will be spring-cloud-starter-netflix-eureka-server and add @EnableEurekaServer on top of main class eureka spring prject.
+and for client means our microservices need to register on eureka server for that purpose we have to add dependeny 
+spring-cloud-starter-netflix-eureka-client and add @EnableDiscoveryPattern on top of each microservice main class.
+
+What is Circuit Breaker Pattern?
+A circuit breaker is a solution to handle failure in microservices. We need to check the health of the application on the basis of that	if the
+application is running fine it should provide the response and What if one of a service is not running. In that case we need to implements
+Hystrix for that.
+Suppose service A is calling service B and C. We want B service give always a response but due to some reason it is not providing response
+to service A in that case we have to maintain here HYSTRIX. In case 1 service B is giving response to service A and yes it is giving response. 
+But in case 2 B is not giving response to A that we should have some replacement here that is called fallback mechanism. 
+If service A is getting response from service B that means a circuit is working fine this is called as closed circuit. even though it is 
+not working fine we need to show some dummy data is called as half open state.
+
+What is Synchronous communication?
+Suppose service A getting request from client. After that service A communicating service B and getting response from service B. 
+After receiving resonse from B , A is communicating to service C and after receiving response from service C. 
+Finally service A will sending response to client, this is called.
+
+What is fiegn client?
+it is nothing but consuming other web services. it is same as like Rest Template. We configure Rest Template into the service to call 
+other service. We can use fien client instead of rest template, which is light weight comapre with rest template. Rest template is
+a blocking API, if one request is in process other service will wait for its process. Where as fiegn client is non blocking API.
+
+What is Zuul API Gateway?
+Zuul Server is an API Gateway application. It handles all the request and performs the dynamic routing of microservice application.
+It acts like an front door for all microservices. In this scenario client is not directly contacting to certain microservice but client is
+contacting to certain microservice through API Gateway.
+
+What is Slueth and Zipkin?
+Both are come under microservices monitoring tool. To monitoring and tracking we use Slueth and Zipkin library.
+Slueth generates traceId and spanId when communicating with microservices and provide it to the zipkin server
+There is a service application having 4 services A, B, C & D their may request is coming from one service to another service. Suppose
+a request coming from client to service A. Some time A is calling service B or service C or service D. And Some times A is calling B and B
+is calling C and C is calling D so the flow may be anything or differ. Suppose we got all responses after giving request to service that time its
+well and good. If anything goes wrong and we wanted to trace where it is falling and how the flow is we wanted to monitor. So for that purpose
+to monitoring and tracing we use Slueth and Zipkin library.
+
+Slueth:- -It is for service to service tracing. Means every call where the service was started it will give one ID that is called as traceId.
+          Using that tracing id we can monitor which service is calling and where the flow is going we can monitor with that tracing id.
+          SpanId means there is one service to another service there is a span like wise there is more span for this spanId is thier.
+          And that spanId is differs from service to service. Where ther traceId remains same throught the flow.
+         -Here is no extra configuration is needed only need to add dependency spring-cloud-starter-slueth.
+         -After adding slueth it will give logger with application name, traceId, spanID and Zipkin Export Flag.
+         -SpanId is differs from service to service.
+         -Last property is Zipkin Export Flag it provies boolean value, if it is true slueth properties are export to the Zipkin server to
+          monitor the microservice in graphical manure. else it is false it means that we are not exporting slueth and monotoring this
+          slueth property on console.
+Zipkin:- Zipkin server default port number is 9411.
+
+Popular design pattern are?
+API Gateway, centralized configuration, distributed database or shared database, fault tolerance or circuit breaker pattern.
