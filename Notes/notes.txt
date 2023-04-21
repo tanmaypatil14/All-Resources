@@ -1,0 +1,217 @@
+This Keyword:- this keyword which refered to the current object.
+Super Keyword:- super keyword will call the contructor of super class or parent class.
+--------------------------------------
+Why parent class constructor have super keyword?
+-> Every class in java extends a object class
+
+
+In Enumeration we have all the cursors or the Interfaces then how do we able to create object for that?
+ANS:- There are some implemented classes for this for all the interfaces. Because of that we can able to create object.
+------------------------------
+HashSet:
+   Key points for HashSet:
+     1. Underlying data structure for HashSer is HashTable.
+     2. Duplicates are not Allowed.
+          If we add the same object in the HashSet what will happen.
+    Ans:- First of all if object add same object in HashSet hashcode will be same.
+          Second thing is that the return type of the add method is boolean. if we are adding same object again and gain
+          it will get repeating for the first ouput it will return true and again we are trying to add same object then 
+          it will return false then that object won't be added in our HashSet.
+
+           Example:- HashSet set = new HashSet();
+                     set.add("Tanmay"); // true
+                     set.add("Tanmay"); // false
+
+     3. Insertion order is not preserved.
+          Why isertion order is not preserved?
+    Ans:- Because internally it uses HashMap. Because of that this is not going to work on the basis of index.
+          Whenever I create the object of the hashSet. First i will get empty object of the hashset with size
+          (initial capacity) 16. So I will be get Object of size 16. If we are adding any object in this HashSet,
+          on the basis of the hashcode index will be calculated using some formula this mechanism taking care by 
+          JVM not us.Whenever we add some element in to hashSet hashcode will be generate and using that hashcode 
+          index will be get and then on the basis of index elemets will be kept inside the hashTable. 
+          Therefore insertion order is not preserved in HashSet.
+
+     4. Null insertion is possible but only once.
+     5. Heterogeneous objects are allowed
+     6. It implements Serializable and cloneable.
+     7. HashSet will be best choice for searching.
+
+    Constructors of HashSet
+        1. HashSet set = new HashSet(); // Default constructor = It will create empty object of HashSet 
+                                                                 with initial capacity of size 16.
+    
+        What is Load Factor and Filled ratio?
+   Ans:- It will create a Hashtable of initial capacity is 16 with default loadfactor 0.75.
+         So it means that 75% of the object will filled up it won't wait, automatically will create new object of hashset.
+
+        2. HashSet set = new HashSet(int intialCapacity);
+        3. HashSet set = new HashSet(int intialCapacity, float loadFactor);
+        4. HashSet set = new HashSet(Collection c);
+
+LinkedHashSet:-
+
+        1. It is the combination of LinkedList and Hashtable
+        2. Duplicates are not alowed but insertion order is preserved.
+        3. it is child class of HashSet
+
+SortedSet:-
+        1. it is child interface of set
+        2. If we want to represent a group of individual object according to some sorting order without duplicates
+           then we can go for sorted set.
+
+TreeSet:-
+        1. Duplicates are not allowed.
+        2. Insertion order is not preserve
+        3. Underlying data structure of TreeSet is balanced Tree.
+        4. heterogneous objects are not allowed.
+        5. it implements Serializable and cloneable
+        6. When i will be adding objects in treeSet those will be added on basis of some sorting technique.
+        7. null is possible only once. till java version 1.6 one null value was allowed in empty treeset
+           but from version 1.7 it will not allowed in empty treeset.
+        8. Whatever the object we trying to add into treeset it should be comparable
+
+            Ex:-TreeSet set  = new TreeSet();
+		set.add(new StringBuffer("H"));
+		set.add(new StringBuffer("H"));
+		set.add(new StringBuffer("G"));
+		set.add(new StringBuffer("a"));
+		set.add(new StringBuffer("A"));
+		System.out.println(set);
+         From java version 11 StringBuffer implements comparable.
+   
+    Concluded:
+       1. Objects should be homogeneous
+       2. Objects should be comparable
+       3. From Java 1.7 null not allowed
+
+         How sorting is getting done in TreeSet? and if I am creating an object of TreeSet then what will happen?
+   Ans:- When i am creating an object of treeset("TreeSet set  = new TreeSet();") without passing any parameter
+         with a default constructor. So it going to operate for default sorting order and this default sorting mechanism 
+         and this default sorting mechanism, there is a method is present for doing that operation. And When I am
+         going to add element in this set and going to executing this code. When this will get execute JVM will come
+         in the picture internally JVM will call one method and with respect to that method this object are getting
+         sorted. The name of the method which is responsible to do the sorting is 'compareto();'. 
+         but bydefault if i am not providing any parameter or object their. So bydefault it is calling compareTo method
+         Which is present in comparable interface. 
+
+-------------------------------------------------------------------------------------------------------------------
+Comaparable and comparator:-
+
+Comparable Interface:
+
+         1. Present in java.lang (By default it is imported in our package).
+         2. Comaparable interface is having only one method
+             a. public int compareTo(Object obj)
+                 Why compareTo method return Integer?
+            Ans:- This compareTo() method is going to sort. When I am sorting we know default characteristics of set
+                  is duplicates are not allowed. Only on the basis of the boolean(true or false) sorting is not possible.
+                  So i will need to specify some more logic on the basis of that I can be able to arrange the objects int
+                  a proper sorting way. Therefore this method instead of returning int, because int will returning only 
+                  true and false. but I know that if their are two object or i will have to multiple objects over their and
+                  i will have to ignore the duplicate object in that case possibly we can do three things.
+                  First i will have to check when i comparing two objects which object should put on left hand side, which
+                  object should put right hand side and which object should not add because it is duplicated
+                  value. So there are three possibilities, in order to represent three possibilities instead of using boolean.
+                  Because boolean can passes only two values true and false but we want three, for left handside means -ve,
+                  for right hand side means +ve and 0 that means th objects are equal duplicates are not allowed
+
+                i. If this method will return -ve object1 comes before object2
+               ii. If this method will return +ve object1 comes after object2
+              iii. 0 then both objects are equals
+
+
+          3. For natural default sorting method JVM will call compareTo() method.
+
+* Comparable is used for default sorting order.
+* Comparator is used for custom sorting order.
+
+Comparator Interface:
+          1. It is present in java.utils package
+          2. It is having an two methods:
+                 i. public int compare(Object o1, Object o2);
+                      a. If this method will return -ve object1 comes before object2
+                      b. If this method will return +ve object1 comes after object2
+                      c. 0 then both objects are equals
+
+                    Here we have two objects o1 & o2, then
+                      o1 :- o1 is the new object we are going to add. If we are adding first object and we have nothing to compare then 
+                            nothing will happen. But if we have one object which is already added then o1 will be 
+                      o2 :- o2 is the existing object as we going to compare with o1.
+
+      Example :-     
+
+        public class ComparatorEx {
+
+	   public static void main(String[] args) {
+		TreeSet set = new TreeSet(new MyClass());
+		set.add(12);  // 12
+		set.add(8);   // compare(8,12) = 12,8
+		set.add(0);   // compare(0,12);compare(0,8) = 12,8,0
+		set.add(3);   // compare(3,12);compare(3,8);compare(3,0) = 12,8,3,0
+		set.add(13);  // compare(13,12);compare(13,8);compare(13,0);compare(13,3) = 13,12,8,3,0
+		set.add(10);  
+		set.add(14);
+		System.out.println(set);
+	   }
+        }
+
+       class MyClass implements Comparator {
+
+          @Override
+	  public int compare(Object o1, Object o2) {
+		Integer number1 = (Integer) o1;
+		Integer number2 = (Integer) o2;
+		
+         //	return number1.compareTo(number2);  //Ascending
+         //	return -number1.compareTo(number2); //Descending
+         //	return number2.compareTo(number1);  //Descending
+         //	return -number2.compareTo(number1); //Ascending
+         //	return +1; //Insertion order is followed in such way that the objects are added.
+         //	return -1; //Reverse insertion order is followed in such way that the objects are added.
+		return 0; //Only one object is added due to 0 it assumes that duplicate values are present in set.
+		
+         //	if (number1 < number2)
+         //		return 1;
+         //	else if (number1 > number2)
+         //		return -1;
+         //	else
+         //		return 0;
+	  }
+        }
+
+             ->> In this case one loop mechanism will work until and unless a condition will satisfied the loop won't break
+
+                ii. equals(Object o);
+
+
+      Note:- If we want to implement sorting to the user Defined Object or user defined class then which interface do imeplements
+             Comparable or Comparator ?
+          Ans:- I will implement Comparable to sort the user defined class. Suppose if i am adding string objects into tree set then
+                my string objects are comparable which i can compare them and sort them because String class implements comparable
+                interface. Then if i want to sort the user defined class in any order then i must have to implements Comparable.
+                Because all the object are the string.
+
+
+           Comparable                              |                 Comparetor
+> It is used for default sorting order               > Whenever we want implement customize sorting order then 
+  For doing that objects must be homogeneous           we use comparator interface.
+  and comparable.
+> only one method :                                  > Two methods :
+   compareTo(Object o);                                 compare(Object o1, Object o2);
+                                                        equals(Object o);
+
+----------------------------------------------------------------------------------------------------------------
+Map:-
+   1. Map is not child of Collection interface.
+   2. If we want to represent a group of individual objects in the key value pair.
+   3. Duplicate keys are not allowed but can have duplicate values.
+   4. only one null key is allowed and for value it is allowed.
+   5. One key value pair that means a one entry. And the map is the collection of entry objects.
+
+              What are the collection view methods in a Map?
+         Ans:- Set keySet();
+               Collection values();
+               Set entrySet();  
+
+

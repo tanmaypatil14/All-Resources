@@ -1,0 +1,20 @@
+You are responsible for developing a module for 
+a countries information system.
+Create a Map as Country Information.
+Country name will be Key and Name of 
+capital of country will be value.
+
+-------------------------
+1. Get Capital by Country
+2. Get Country by Capital
+0. Exit
+-------------------------
+
+1.
+Enter the name country
+India
+Delhi
+
+2. Enter the name Capital
+Delhi
+India
