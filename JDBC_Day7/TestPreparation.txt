@@ -1,0 +1,171 @@
+Question. What is access level of protected access modifier?
+A) Can't aceess anywhere.
+B) can be accessed in derived class in another package but not in a non-derived class in another package.
+C) can access everywhere
+D) None of above.
+
+Question. How does we can restrict a method to override in child method
+A) By declaring it as final
+B) using static keyword
+C) By declaring abstract
+
+
+Question. Which of the following way we can use to handle checked Exception?
+A) throw Exception 
+B) throws Exception 
+C) new Exception 
+D)  Don't need to specify anything 
+
+
+
+Question. Which keyword is use to throw exception explicitly?
+A)  throw 
+B) throws 
+C) throwing 
+D) catch 
+
+Question.What will be correct output of given code?
+	public void division(){
+	try{
+		System.out.println(10/0);
+	}catch(ArithmeticException ex)
+		System.out.println("Exception");
+	}finally{
+		System.out.println("Finally block");
+	}
+A) Prints out: Exception Finally 
+B) Prints out: Finally 
+C) Prints out: Exception 
+D) compiler error 
+
+Question. Assuming class Employee is there with Employee constructor taking id,name,sal in it…
+class A{
+	public static void main(String[] args)
+	{
+	Employee e = new Employee(1,”ram”,20000);
+	Employee e1=e;
+	if(e==e1)
+	{System.out.println(“false”);
+	}else
+	{System.out.println(“true”);
+	}
+	}
+	}What will be the output?
+A) False
+B) True
+C) CompilerError
+D) RuntimeException 
+
+Question. Which of the follwoing is use to fetch the Object value using key?
+A) Map 
+B) Set
+C) List 
+D) Collection 
+
+Question. What will be output of given below code?
+class B{
+	public void writeInFile(){
+	FileWriter writer = new FileWriter("D://Bhushan.txt");
+	}
+	}
+A) Code will run fine if IO Exception does not occur 
+B) Compiler error 
+C) Runtime IOException 
+D) None of the above 
+
+Question. Interface methods are by default --------------------------- 
+A) public and abstract 
+B) default and abstract 
+C) public and final 
+D) none of the above 
+
+Question. Which of the following methods return the number of rows affected by the query? 
+A) executeQuery() 
+B) executeUpdate() 
+C) execute() 
+D) getResultSet() 
+
+
+Question. Annotation in java program can be seen in --------.
+A) method and class 
+B) method and field 
+C) class and field 
+D) class,method and field 
+
+Question: consider following code.
+String a = "ABCD";
+a.concat(“DEF”);
+System.out.println(a);
+What is the result?
+A) DEF 
+B) ABCD
+C) ABCDDEF 
+D) None of the above 
+
+Question: you cannot create an object of ------------------- class 
+A) final 
+B) abstract
+C) normal 
+D) private 
+
+Question. Which collection class(es) allows you to grow or shrink its size and provides 
+indexedaccess to its elements, but whose methods are not synchronized?
+A) HashSet 
+B) LinkedHashSet 
+C) List 
+D) ArrayList 
+E) Vector 
+
+Question. What will be output of following code?
+import java.util.*;    
+class Bitset{
+public static void main(String args[]){
+BitSet obj = new BitSet(5);            
+for (int i = 0; i < 5; ++i)                
+obj.set(i);            
+obj.clear(2);           
+System.out.print(obj);        
+}    
+}
+
+A) {0, 1, 3, 4}
+B) {0, 1, 2, 4}
+C) {0, 1, 2, 3, 4}
+D) {0, 0, 0, 3, 4}
+
+In which of the following classes toString() method is already overridden ------ 
+A) Scanner 
+B) Integer
+C) Employee 
+D) Manager 
+
+
+Question. Which of the following class generate checked Exception
+A) IOException
+B) NullPointerException 
+C) ArrayIndexOutOfBoundsException 
+D) ClassCastException 
+
+Question. When is the object created with new keyword?
+A. At runtime
+B. At compile time
+C. Anytime
+D. None of above
+
+Question. hasMoreElements() method of Enumeration has been changed to___________ in Iterator..
+A. hasNextElement()
+B. isNext()
+C. hasNext()
+D. name remains same
+
+
+
+
+
+
+
+
+
+
+
+
