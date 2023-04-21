@@ -1,0 +1,63 @@
+Autowiring in spring?
+
+Autowiring is nothing but injecting dependencies But its being taken care spring,
+it will be done automatically.
+In previous examples 
+<ref=”aref”>
+Imp point  Autowiring is having one drawback that, 
+it will be injecting only object. Not primitive and string values
+Autowiring can be done using two approaches 
+1.	XML base
+2.	Annotation 
+
+1.	XML base autowiring 
+        We have to use attribute that autowire 
+      a.	ByName
+      b.	ByType
+      c.	Constructor
+      d.	Autodetect – deprecated 
+
+What we did in previous examples
+
+<bean class=”com.blabla.A” name=”aref”>
+
+
+<bean class=”com.blabla.B” name=”bref” >
+<property name=”obj” ref=”aref” />
+
+If there will be multiple beans then we can either use autowire-candidate="false" or primary = "true"
+
+
+1.Annotation 
+We will have to use annotation for doing same.
+@Autowired
+@Qualifier  if there will be two bean we have created so at the time compilation compiler will get confuse which bean suppose to consider , 
+in such scenarios we can use @Qualifier.
+We will have to use @Qualifier along with @Autowired annotation
+Sysntax for @Qualifier is
+
+@Autowired
+@Qualifier(“name_of_bean”)
+
+-------------------------------------------------------------
+1. xml base autowiring
+2. annotation base autowiring
+
+xml base autowiring
+1. <bean class="" name="" autowire="byName">
+2. <bean class="" name="" autowire="byType">
+3. <bean class="" name="" autowire="constructor">
+
+annotation base autowiring
+1. we will have to enable annotation by
+adding  <context:annotation-config></context:annotation-config>
+2. @Autowired using which we can implement autowiring
+3. @Autowired can be used on top Object
+4. @Autowired can be put on top setter method
+5. @Autowired can be put on top constructor
+
+if there will be multiple beans and we have to 
+inject selected one then by using
+@Qualifier() annotation we can achieve this.
+Syntax:
+@Qualifier("nameOfBean")
